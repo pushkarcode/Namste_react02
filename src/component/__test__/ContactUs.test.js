@@ -5,6 +5,14 @@ import "@testing-library/jest-dom";
 
 // ! Group each of test case inside describe block
 describe("ContactUsa page test case's", () => {
+
+  // beforeAll(() => {
+  //   console.log("Before All")
+  // })
+  // afterAll(() => {
+  //   console.log("after All");
+  // })
+  
   test("should load contact component", () => {
     render(<ContactUs />);
     //  ! Quering
@@ -21,6 +29,7 @@ describe("ContactUsa page test case's", () => {
 
     expect(button).toBeInTheDocument();
   });
+
   test("should load placeholder text in contact component", () => {
     render(<ContactUs />);
 

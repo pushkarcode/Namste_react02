@@ -5,7 +5,6 @@ import { DATA_CDN } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { IoMdArrowBack } from "react-icons/io";
 import RecommendedCard from "./RecommendedCard";
-import { MdArrowForwardIos } from "react-icons/md";
 
 const RestrunatMenu = () => {
   const [showindex, setShowindex]  = useState(null);

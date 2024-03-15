@@ -1,8 +1,9 @@
 import React from "react";
 import { DATA_CDN } from "../utils/constant";
-import noimg from "../../Public/noimg.jpg";
+// import noimg from "../../Public/noimg.jpg";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const RecommendedeItemList = ({ items }) => {
@@ -12,13 +13,14 @@ const RecommendedeItemList = ({ items }) => {
   const handleAdditem = (items) => {
     // ? Dispatch the action
     dispatch(addItem(items))
+    toast.success("Item added to cart")
 
   }
   
   return (
     <div>
       {items.map((items) => (
-        <div className="flex items-center justify-between p-2 mb-6 border-b-[1.4px] border-zinc-400" key={items?.card?.info?.id}>
+        <div className="flex items-center justify-between p-2 mb-6 border-b-[1.4px] border-zinc-400" data-testid="foodItems" key={items?.card?.info?.id}>
         <div className="flex flex-col gap-1">
           <h1 className="text-md font-semibold text-zinc-700">{items?.card?.info?.name}</h1>
           <p className="text-sm">
@@ -35,13 +37,14 @@ const RecommendedeItemList = ({ items }) => {
             src={DATA_CDN + items?.card?.info?.imageId}
             alt=""
           />) : (
-            <img
+            {/* <img
             className="w-[8vw] h-[14vh] object-cover rounded-lg"
             src={noimg}
-              />
+              /> */}
           ) }
 
           <button onClick={() => handleAdditem(items)} className="absolute top-[76%] left-[26%] px-2 py-[1px] bg-zinc-300 rounded-lg text-lg font-light text-red-500 shadow-lg">Add +</button>
+          <Toaster />
         </div> 
         </div>
       ))}

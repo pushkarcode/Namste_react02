@@ -19,12 +19,12 @@ class About extends React.Component {
   render() {
     console.log("parent render");
     return (
-      <div className="p-10">
-        <h2>Learn from the best teacher in </h2>
-        <div className="felx">
+      <div className="overflow-x-hidden p-10 ml-3">
+        <h2 className="font-light text-5xl text-zinc-600 mb-3">About Us.</h2>
+        <div className="felx text-xl text-zinc-500 font-thin">
           LoggedIn user :
          <UserContext.Consumer>
-        {(({loggedInUser}) => <span>{loggedInUser ? (loggedInUser) : (<span>Default User</span>)}</span> )}
+        {(({loggedInUser}) => <span>{loggedInUser ? (loggedInUser) : (<span> Default User</span>)}</span> )}
          </UserContext.Consumer>
         </div>
         {/* <User name="pushkar from function"/> */}

@@ -22,6 +22,25 @@ test("should load (rebder) header component with login button", () => {
   const logoutbtn = screen.getByRole("button", { name: "Logout" });
   //secand way
   // let loginbtn = screen.getByText("Login")
-
   expect(logoutbtn).toBeInTheDocument();
+});
+
+test("should load online or offline", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
+
+  // const onlinestatus = screen.getByText("🔥");
+  // console.log(onlinestatus);
+  // fireEvent.offline(onlinestatus);
+
+  // expect(onlinestatus).toBeInTheDocument();
+
+  // fireEvent.offline(screen.getByText("🦁"));
+
+  // expect(onlinestatus).toBeInTheDocument();
 });

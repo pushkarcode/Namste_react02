@@ -70,6 +70,7 @@ const Body = () => {
           <input
             className="outline-none border-[1px] text-zinc-900 border-zinc-400 px-5 py-1 mr-4 rounded-md"
             type="text"
+            data-testid="searchInput"
             onChange={(e) => setSearchtext(e.target.value)}
             onKeyDown={handleKeyDown}
             value={searchtext}
@@ -117,26 +118,22 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container w-full h-full flex flex-wrap flex-row justify-center gap-16 bg-[#FFFFFF]">
-        {Array.isArray(listOfRestaurants) ? (
-          fiterdatalist.map((restaurant) => (
-            <Link
-              key={restaurant.info.id}
-              to={"/restaurants/" + restaurant.info.id}
-            >
-              {/* // if the reastarunt pramoted then add a lable on it  */}
+        {fiterdatalist.map((restaurant) => (
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            {/* // if the reastarunt pramoted then add a lable on it  */}
 
-              {/* {restaurant.data ? (
+            {/* {restaurant.data ? (
                 <RestaurantCardPromoted resData={restaurant}/>
                ) : (
                 <RestaurantCard resData={restaurant} />
                )} */}
 
-              <RestaurantCard resData={restaurant} />
-            </Link>
-          ))
-        ) : (
-          <p>listOfRestaurants is not an array</p>
-        )}
+            <RestaurantCard resData={restaurant} />
+          </Link>
+        ))}
       </div>
     </div>
   );
