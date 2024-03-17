@@ -44,3 +44,7 @@ and node modules ans much more🔥🔥🔥
 - installl  @babel/preset-react  to work jsx
 - include  @babel/preset-react inside babale.config file
 - install /jsdom library
+
+# hosting App without any hessel use CORS proxy 
+
+- excute api calls
