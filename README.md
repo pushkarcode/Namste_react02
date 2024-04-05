@@ -48,3 +48,4 @@ and node modules ans much more🔥🔥🔥
 # hosting App without any hessel use CORS proxy 
 
 - excute api calls
+- Updating the api for more effective use
