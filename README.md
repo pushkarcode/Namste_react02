@@ -49,3 +49,4 @@ and node modules ans much more🔥🔥🔥
 
 - excute api calls
 - Updating the api for more effective use
+- debounceing
